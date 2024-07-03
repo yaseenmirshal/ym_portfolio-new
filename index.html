@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../../assets/vendor/aos/dist/aos.css">
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="icon" href="ym inno logo copy-modified.png">
+        <link rel="stylesheet" href="../../assets/vendor/aos/dist/aos.css">
+        <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+        src="../../assets/vendor/aos/dist/aos.js"
+        >
+    
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("VMtF3hZJL-InO-3mJ");
+   })();
+</script>
+        <title>mirshal portfolio</title>
+    </head>
+    <body >
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <img class="logoimg" src="ymremove.png">
+            <nav class="nav bd-grid">
+            
+                <div>
+                    
+                    <a href="#" class="nav__logo">Portfolio.</a>
+                    
+                </div>
+
+                <div class="nav__menu" id="nav-menu" >
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link ">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#Skills" class="nav__link">Skills</a></li>
+                        <li class="nav__item"><a href="#work" class="nav__link">Works</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                        <li class="nav__item"><a href="http://wa.link/x6pfzt" target="_blank" class="nav__link">Get in Touch</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                    
+                </div>
+            </nav>
+        </header>2
+
+        <main class="l-main"> 
+            <!-- ===== HOME ===== -->
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+                    <h1 class="home__title">Hi,<br>I'am <br> <span class="webd">WEB DESIGNER</span></h1>
+                    <!-- ////////////////////////////DANGER ZAONE/////////////////// -->
+                    <div class="containermir">
+                        <span id="text1"></span>
+                        <span id="text2"></span>
+                    </div>
+                    
+                    <svg id="filters">
+                        <defs>
+                            <filter id="threshold">
+                                <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                                                        0 1 0 0 0
+                                                        0 0 1 0 0
+                                                        0 0 0 255 -140" />
+                            </filter>
+                        </defs>
+                    </svg>
+                                <style>
+                                  @import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
+                    
+                    body {
+                        margin: 0px;
+                        /* background-color: #000435; */
+                    }
+                    /* /////yaseen mirshal animation ...... */
+                    .containermir {
+                        position: absolute;
+                        margin: auto;
+                        width: 250px;
+                        height: 80pt;
+                        margin-left: 140px;
+                        margin-top: 305px;
+                        top: 0;
+                        bottom: 0;
+                        animation: 2s fadeInAnimation;
+                        filter: url(#threshold) blur(0px);
+                    }
+                    
+                    #text1,#text2 {
+                        position: absolute;
+                        width: 100%;
+                        display: inline-block;
+                        color: #DEDEDE;
+                        letter-spacing: 2.5px;
+                       
+
+                    
+                        font-family: "Raleway", sans-serif;
+                        font-size: 50pt;
+                        text-align: center;
+                    
+                        user-select: none;
+                    } 
+                                </style>
+                                <script>
+                                  const elts = {
+                        text1: document.getElementById("text1"),
+                        text2: document.getElementById("text2")
+                    };
+                    
+                    const texts = [
+                        "Yaseen",
+                        "Mirshal",
+                    ];
+                    
+                    const morphTime = 1;
+                    const cooldownTime = 0.70;
+                    
+                    let textIndex = texts.length - 1;
+                    let time = new Date();
+                    let morph = 0;
+                    let cooldown = cooldownTime;
+                    
+                    elts.text1.textContent = texts[textIndex % texts.length];
+                    elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+                    
+                    function doMorph() {
+                        morph -= cooldown;
+                        cooldown = 0;
+                    
+                        let fraction = morph / morphTime;
+                    
+                        if (fraction > 1) {
+                            cooldown = cooldownTime;
+                            fraction = 1;
+                        }
+                    
+                        setMorph(fraction);
+                    }
+                    
+                    function setMorph(fraction) {
+                        elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+                        elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+                    
+                        fraction = 1 - fraction;
+                        elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+                        elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+                    
+                        elts.text1.textContent = texts[textIndex % texts.length];
+                        elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+                    }
+                    
+                    function doCooldown() {
+                        morph = 0;
+                    
+                        elts.text2.style.filter = "";
+                        elts.text2.style.opacity = "100%";
+                    
+                        elts.text1.style.filter = "";
+                        elts.text1.style.opacity = "0%";
+                    }
+                    
+                    function animate() {
+                        requestAnimationFrame(animate);
+                    
+                        let newTime = new Date();
+                        let shouldIncrementIndex = cooldown > 0;
+                        let dt = (newTime - time) / 1000;
+                        time = newTime;
+                    
+                        cooldown -= dt;
+                    
+                        if (cooldown <= 0) {
+                            if (shouldIncrementIndex) {
+                                textIndex++;
+                            }
+                    
+                            doMorph();
+                        } else {
+                            doCooldown();
+                        }
+                    }
+                    
+                    animate();
+                                </script>
+
+                    <!-- ///////////////////////////// mirshal end ////////////// -->
+                    <a href="YASEEN-MIRSHAL-CV-2.pdf" target="_blank" class="button">Download CV</a>
+                </div>
+
+                <div class="home__social " >
+                    <a href="https://instagram.com/yaseen_mirshal?igshid=NzZlODBkYWE4Ng==" target="_blank" class="home__social-icon"><i class='bx bxl-instagram'></i></a>
+                    <a href="http://t.me/yaseen_mirshal"target="_blank" class="home__social-icon"><i class='bx bxl-telegram' ></i></a>
+                    <a href="https://github.com/yaseenmirshal"target="_blank" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                    <a href="https://www.youtube.com/channel/UC-alWGLEsO8jUZaHeNBvgTA"target="_blank" class="home__social-icon"><i class='bx bxl-youtube' ></i></a>
+                    <a href="https://twitter.com/yaseen_mirshal"target="_blank" class="home__social-icon"><i class='bx bxl-twitter' ></i></a>
+                    <a href="https://www.linkedin.com/in/yaseen-mirshal-11a7b623a/"target="_blank" class="home__social-icon"><i class='bx bxl-linkedin' ></i></a>
+                </div> 
+
+                <div  class="home__img">
+                    <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <mask id="mask0" mask-type="alpha">
+                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+                        </mask>
+                        <g mask="url(#mask0)">
+                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+                            <image class="home__blob-img" x="70" y="7" href="Mirshal-removebg-preview.png"/>
+                        </g>
+                    </svg>
+                </div>
+            </section>
+            <!-- ////ABOUT///// -->
+            <section class="about section" id="about">
+                <h2 data-aos="fade-up" class="section-title">About</h2>
+                <div  class="about__container bd-grid" ></div>
+                <img data-aos="zoom-in" class="lapimg" src="code lap.jpeg">
+                <div data-aos="flip-left" class="aboutclass">
+                    
+                    <p class="about__text" data-aos="fade-up">
+                        Name : <b>YASEEN MIRSHAL</b> <br/><br/>
+                        Age : <b>20</b> <br/><br/>
+                        Place : <b>Calicut, India</b> <br/><br/>
+                        P O B : <b>Saudi Arabia</b> <br/><br/>
+                        Nationality : <b>India</b><br/><br/>
+                        Phone : <b>+91 9947234099</b> <br/><br/>
+                        E-mail : <b>yaseenmirshal5@gmail.com</b>
+                    </p>           
+                </div> 
+            </section>
+                                                     
+                </div>
+            </section>
+
+             <!-- ===== SKILLS ===== -->
+              <section class="skills-section" id="Skills">
+                <h2 class="section-title" data-aos="fade-up">Skills</h2>
+
+                <div  class="skills__container bd-grid">          
+                    <div>
+                        <h2 class="skills__subtitle" data-aos="fade-down">Profesional Skills</h2>
+                        <p class="skills__text" data-aos="fade-right">
+                            I possess advanced proficiency in HTML and CSS, complemented by a foundational understanding of JavaScript. My passion lies in the meticulous craft of web design, and I am dedicated to continually expanding my skills in this dynamic field. I have developed expertise in React.js, Redux.js, TypeScript, Next.js, Tailwind CSS, and Bootstrap, enabling me to create interactive and dynamic user interfaces with ease. This breadth of knowledge allows me to not only design visually stunning websites but also ensure they are highly functional and user-friendly.</p>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl-html5 skills__icon'></i>
+                                <span class="skills__name">HTML</span>
+                            </div>
+                            <div class="skills__bar skills__html">
+                            </div>
+                            <div>
+                                <span class="skills__percentage">95%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl-css3 skills__icon'></i>
+                                <span class="skills__name">CSS</span>
+                            </div>
+                            <div class="skills__bar skills__css">    
+                            </div>
+                            <div>
+                                <span class="skills__percentage">85%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl-javascript skills__icon' ></i>
+                                <span class="skills__name">JAVASCRIPT</span>
+                            </div>
+                            <div class="skills__bar skills__js">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">65%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl-react skills__icon'></i>
+                                <span class="skills__name">React JS</span>
+                            </div>
+                            <div class="skills__bar skills__ux">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">85%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>              
+                        <img  data-aos="zoom-in-down" src="Code photo.jpeg" alt="" class="skills__img">
+                    </div>
+                </div>
+            </section>  
+
+             <!-- ===== WORK ===== -->
+            <section class="work section" id="work">
+                <h2 data-aos="fade-up" class="section-title" >Works</h2>
+                <div class="work__container bd-grid">
+                    
+                    <a href="https://sociafy-app.vercel.app/" target="_blank" class="work__img">
+                        <img data-aos="fade-up"
+                        data-aos-anchor-placement="center-bottom" src="socialmedia.png" alt="linkd">
+                    </a>
+                  
+                    <a href="https://yaseenmirshal.github.io/apple-websites-interface/" target="_blank" class="work__img">
+                        <img data-aos="fade-up"
+                        data-aos-anchor-placement="center-bottom" src="appleweb.png" alt="appleweb">
+                       
+                    </a>
+                    <a href="https://github.com/yaseenmirshal/to-do-list/tree/main/to-do" target="_blank" class="work__img">
+                        <img data-aos="fade-up"
+                        data-aos-anchor-placement="center-bottom" src="todo.png" target="_blank"  alt="appleweb">
+                    </a>
+                    <a href="https://registration-page-bgjs.vercel.app/" target="_blank"  class="work__img">
+                        <img data-aos="fade-up"
+                        data-aos-anchor-placement="center-bottom" src="registartion.png" alt="appleweb">
+                    </a>
+                    <a href="https://yaseenmirshal.github.io/bank-balance/" target="_blank"  class="work__img">
+                        <img data-aos="fade-up"
+                        data-aos-anchor-placement="center-bottom" src="bank.png" alt="appleweb">
+                    </a>
+                    <a href="https://e-commerce-flax-psi.vercel.app/" target="_blank" class="work__img">
+                        <img data-aos="fade-up"
+                        data-aos-anchor-placement="center-bottom" src="furniweb.png" alt="appleweb">
+                    </a>
+                </div>
+            </section>
+
+             <!-- ===== CONTACT ===== -->
+             <section class="contact section" id="contact">
+                <h2 data-aos="fade-up" class="section-title">Contact</h2>
+
+                <div style="margin-left: 30px;" class="contact__container bd-grid">
+                    <form action="" class="contact__form">
+                        <input data-aos="zoom-in-down" id="name" type="text" placeholder="Name" class="contact__input">
+                        <input data-aos="zoom-in-down" id="email" type="email" placeholder="Email" class="contact__input">
+                        <textarea data-aos="zoom-in-down" id="message" name="" id="" placeholder="Message" cols="0" rows="10" class="contact__input"></textarea>
+                        <button data-aos="zoom-in-down" style="margin-left: 220px; width: 270px;" type="button" value="Submit" class="contact__button buttonsub" onclick="sendMail()">Submit</button>
+                    </form>
+                </div>
+            </section>
+        </main> 
+        
+        <footer class="footer">
+            <p class="footer__title">Mirshal</p>
+            <div class="footer__social">
+                <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+                <a href="https://instagram.com/yaseen_mirshal?igshid=NzZlODBkYWE4Ng==" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                <a href="https://twitter.com/yaseen_mirshal" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+                <a href="http://wa.link/x6pfzt" class="footer__icon"><i class='bx bxl-whatsapp' ></i></a>
+            </div>
+            <p class="footer__copy">&#169; ym innovation. All rigths reserved</p>
+        </footer>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
+
+        <!-- ===== SCROLL REVEAL ===== -->
+        <script src="https://unpkg.com/scrollreveal"></script> 
+
+        <!-- ===== MAIN JS ===== -->
+        <script src="main.js"></script> 
+    </body>
+</html>
